@@ -1,0 +1,32 @@
+:root { --bg:#f4f6fb; --card:#fff; --text:#1f2937; --muted:#6b7280; --accent:#4f46e5; --line:#e5e7eb; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#9ca3af; --line:#374151; }
+}
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:var(--text); }
+header { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; background:var(--accent); color:#fff; }
+header h1 { margin:0; font-size:1.4rem; }
+header a { color:#fff; }
+main { max-width:800px; margin:1.5rem auto; padding:0 1rem; }
+.card { background:var(--card); border-radius:12px; padding:1.2rem; margin-bottom:1rem; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+h2 { margin-top:0; font-size:1.1rem; }
+.add-form { display:grid; grid-template-columns: 1fr 1fr; gap:.6rem; }
+.add-form input[name=description] { grid-column: 1 / -1; }
+input, select, button { padding:.6rem; border:1px solid var(--line); border-radius:8px; font:inherit; background:var(--card); color:var(--text); }
+button[type=submit] { background:var(--accent); color:#fff; border:none; cursor:pointer; grid-column:1 / -1; }
+.total { font-size:1.2rem; }
+.bar-row { display:grid; grid-template-columns: 110px 1fr 140px; align-items:center; gap:.6rem; margin:.4rem 0; font-size:.9rem; }
+.bar { background:var(--line); border-radius:99px; height:10px; overflow:hidden; }
+.fill { background:var(--accent); height:100%; }
+.bar-value { text-align:right; color:var(--muted); }
+table { width:100%; border-collapse:collapse; }
+td { padding:.5rem .3rem; border-bottom:1px solid var(--line); }
+.num { text-align:right; font-variant-numeric: tabular-nums; }
+.tag { background:var(--line); border-radius:99px; padding:.15rem .6rem; font-size:.8rem; }
+.del { border:none; background:none; color:var(--muted); cursor:pointer; }
+.del:hover { color:#dc2626; }
+.muted { color:var(--muted); }
+.flash { padding:.7rem 1rem; border-radius:8px; }
+.flash.ok { background:#dcfce7; color:#166534; }
+.flash.error { background:#fee2e2; color:#991b1b; }
+@media (max-width:560px) { .bar-row { grid-template-columns: 80px 1fr; } .bar-value { grid-column:1 / -1; text-align:left; } }
